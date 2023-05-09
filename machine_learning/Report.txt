@@ -1,0 +1,23 @@
+
+Instructions to Run
+--------------------
+1. First run prepare_data to create the train, val and test data.
+2. Then run train.py to generate train the model and save the model weights file.
+3. Then run test.py to evaluate the model.
+
+Preprocess
+----------
+- Each input is padded with zeros to mimic 15 objects.
+- Entries from each input .txt file is divided into train, val and test data
+- 75 columns are shortened to 15 columns by combining positional information insto a list for each object.
+
+Model Details
+--------------
+Input -> LSTM Layer -> Fully Connected Layer -> Output
+
+- Input is organized as (batch_size, num_objects=15, FeatureDimension=5).
+- Ouput is organized is same way
+
+Results
+-------
+Test Loss: 0.124
